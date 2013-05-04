@@ -1,38 +1,14 @@
-/*
- * Account.java
- *
- * Created on November 9, 2005, 12:46 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
-
 /**
- *
- * @author student
+ * Clase Account creada para el ejercicio 2 nivel 3.
+ * @author Andrés Méndez Juanias
  */
 public class Account {
 
-    private double balance;
+    public double balance;
 
-    /**
-     * Creates a new instance of Account
-     */
-    public Account(double initBalance) {
-        balance = initBalance;
+    public Account(double balance) {
+        this.balance = balance;
     }
 
-    public double getBalance() {
-        return balance;
-    }
-
-    public void deposit(double amt) {
-        this.balance = this.balance + amt;
-    }
-
-    public void withdraw(double amt) {
-        if (balance >= amt) {
-            balance = balance - amt;
-        }
-    }
+    
 }
