@@ -1,3 +1,8 @@
+package com.mybank.test;
+
+
+import com.mybank.domain.Account;
+
 /**
  *
  * @author Andrés Méndez Juanias
