@@ -38,6 +38,7 @@ public class TestIsSubString {
                 return "True";
             }
         }
+        // Retorna False si no enceuntra conisidencias
         return "False";        
         //return text.indexOf(cat) == -1? "False": "True";
     }
