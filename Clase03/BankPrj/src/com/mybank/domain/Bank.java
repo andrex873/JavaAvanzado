@@ -6,24 +6,26 @@ package com.mybank.domain;
  */
 public class Bank {
 
-    private Customer[] customers;
-    private int numberOfCustomers;
+    private static Customer[] customers;
+    private static int numberOfCustomers;
 
-    public Bank() {
+    static {
         customers = new Customer[10];
         numberOfCustomers = 0;
     }
 
-    public void addCustomer(String fn, String ln){
+    private Bank() {
+    }
+
+    public static void addCustomer(String fn, String ln){
         customers[numberOfCustomers++] = new Customer(fn, ln);
     }
 
-    public int getNumberOfCustomers() {
-//        return this.customers.length;
+    public static int getNumberOfCustomers() {
         return numberOfCustomers;
     }
 
-    public Customer getCustomer(int index){
+    public static Customer getCustomer(int index){
         return customers[index];
     }
 }
