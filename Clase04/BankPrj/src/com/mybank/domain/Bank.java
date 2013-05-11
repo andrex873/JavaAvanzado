@@ -1,31 +1,32 @@
 package com.mybank.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Andrés Mémdez juanias.
  */
 public class Bank {
 
-    private static Customer[] customers;
-    private static int numberOfCustomers;
+    private static List<Customer> customers;
 
     static {
-        customers = new Customer[10];
-        numberOfCustomers = 0;
+        customers = new ArrayList<Customer>(10);
     }
 
     private Bank() {
     }
 
     public static void addCustomer(String fn, String ln){
-        customers[numberOfCustomers++] = new Customer(fn, ln);
+        customers.add(new Customer(fn, ln));
     }
 
     public static int getNumberOfCustomers() {
-        return numberOfCustomers;
+        return customers.size();
     }
 
     public static Customer getCustomer(int index){
-        return customers[index];
+        return customers.get(index);
     }
 }

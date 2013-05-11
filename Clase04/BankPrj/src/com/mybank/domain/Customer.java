@@ -1,5 +1,8 @@
 package com.mybank.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Andrés Méndez Juanias
@@ -8,8 +11,7 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    private Account[] accounts;
-    private int numberOfAccounts;
+    private List<Account> accounts;
 
 
 
@@ -17,8 +19,7 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
 
-        accounts = new Account[10];
-        numberOfAccounts = 0;
+        accounts = new ArrayList<Account>(10);
     }
 
     public String getFirstName() {
@@ -30,15 +31,15 @@ public class Customer {
     }
 
     public Account getAccount(int index) {
-        return accounts[index];
+        return accounts.get(index);
     }
 
     public void addAccount(Account account) {
-        this.accounts[numberOfAccounts++] = account;
+        this.accounts.add(account);
     }
 
     public int getNumberOfAccounts() {
-        return this.numberOfAccounts;
+        return this.accounts.size();
     }
 
 }
